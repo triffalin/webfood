@@ -30,6 +30,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	display: none;
 }
 
 .menu-btn span {
@@ -65,14 +66,27 @@ a {
 	position: fixed;
 	top: 0;
 	left: 0;
+	display: none;
+}
+
+#side-drawer:target {
+	display: block;
+}
+
+#side-drawer header {
+	height: 5rem;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 0 5%;
 }
 
 #side-drawer ul {
 	list-style: none;
 	margin: 0;
 	padding: 4rem 1rem;
+	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 }
 
@@ -108,10 +122,6 @@ main h1 {
 .food-item {
 	background-color: rgb(228, 206, 182);
 	border-radius: 6px;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	-ms-border-radius: 6px;
-	-o-border-radius: 6px;
 	overflow: hidden;
 }
 
@@ -126,14 +136,14 @@ main h1 {
 	text-align: center;
 }
 
+.food-item h2 {
+	margin: 0 0 1rem 0;
+}
+
 .btn {
 	background-color: rgb(228, 157, 44);
 	color: white;
 	border-radius: 4px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	-ms-border-radius: 4px;
-	-o-border-radius: 4px;
 	padding: 0.5rem 1.5rem;
 }
 
@@ -141,10 +151,13 @@ main h1 {
 	background-color: rgb(221, 134, 34);
 }
 
-/* For tablet/ipad/etc  */
 @media (max-width: 48rem) {
 	#main-header nav {
 		display: none;
+	}
+
+	.menu-btn {
+		display: flex;
 	}
 
 	main h1 {
@@ -152,6 +165,6 @@ main h1 {
 	}
 
 	#latest-products ul {
-		grid-template-columns: 1fr;
+		grid-template-columns: 100%;
 	}
 }
